@@ -2,10 +2,12 @@
   "name": "kalendarz",
   "version": "0.0.0",
   "description": "Another datepicker built with React",
+  "keywords": ["Datepicker", "React", "TypeScript"],
   "main": "lib/index.js",
   "repository": "git@github.com:mateusrdgs/kalendarz.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com>",
   "license": "MIT",
+  "directories": {},
   "scripts": {
     "clean": "rimraf lib",
     "prestart": "yarn run clean",
