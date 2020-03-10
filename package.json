@@ -1,5 +1,5 @@
 {
-  "name": "kalendarz",
+  "name": "@mateusrdgs/kalendarz",
   "version": "0.0.0",
   "description": "Another datepicker built with React",
   "keywords": ["Datepicker", "React", "TypeScript"],
@@ -17,6 +17,9 @@
     "build": "webpack --config ./webpack/webpack.prod.js --env.NODE_ENV=production"
   },
   "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.13.0",
