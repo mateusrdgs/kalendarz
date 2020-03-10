@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+$green: #00b894;
+$gray: #AFAFAF;
+
+@mixin squarify($size) {
+  min-height: $size;
+  max-height: $size;
+  min-width: $size;
+  max-width: $size;
+  height: $size;
+  width: $size;
+}
+
+.datepicker {
+
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #DDD;
+  display: flex;
+  flex-direction: column;
+  max-width: 344px;
+  padding: 16px;
+  width: 100%;
+
+  &,
+  & * {
+
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+
+  }
+
+  &.--disable-weekend {
+
+    .table__body__cell {
+
+      &.--weekend {
+
+        pointer-events: none;
+
+        &:not(.opaque .--selected) {
+
+          button {
+  
+            color: $gray;
+  
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .header {
+
+    border-bottom: 1px solid $green;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+
+    &__handlers {
+
+      display: flex;
+
+      .header__handler {
+
+        @include squarify(40px);
+
+        background-color: #FFF;
+        border: 0;
+        border-radius: 50%;
+        font-size: 14px;
+        transition: background-color .1s ease-in-out, color .1s ease-in-out;
+        will-change: background-color, color;
+
+        &:hover {
+          
+          background-color: $green;
+          color: #FFF;
+          cursor: pointer;
+
+        }
+
+        &:last-child {
+
+          margin-left: 4px;
+
+        }
+
+      }
+
+    }
+
+    &__title {
+
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 8px;
+      width: 100%;
+
+    }
+
+  }
+
+  .table {
+
+    &__head__cell {
+
+      @include squarify(40px);
+
+      &:hover {
+
+        cursor: default;
+
+      }
+
+    }
+
+    &__body__cell {
+
+      button {
+
+        @include squarify(40px);
+        
+        background-color: transparent;
+        border: 0;
+        border-radius: 50%;
+        font-size: 14px;
+        position: relative;
+        transition: color .2s ease-out;
+        will-change: color;
+        z-index: 0;
+
+        &:hover {
+
+          cursor: pointer;
+
+        }
+
+        &::before {
+
+          background-color: $green;
+          border-radius: 50%;
+          content: '';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          transform: scale(0);
+          transition: opacity .3s ease-in, transform .2s ease-in-out;
+          width: 100%;
+          will-change: opacity, transform;
+          z-index: -1;
+
+        }
+
+      }
+  
+      &.--opaque {
+
+        pointer-events: none;
+  
+        button {
+
+          color: #FFF;
+
+        }
+  
+      }
+
+      &.--selected {
+
+        &:not(.--opaque) {
+
+          button {
+
+            color: #FFF;
+
+            &::before {
+
+              opacity: 1;
+              transform: scale(1);
+  
+            }
+
+          }
+
+        }
+
+      }
+    
+    }
+
+  }
+
+}
