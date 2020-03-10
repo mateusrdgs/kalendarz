@@ -1,2 +1,3 @@
-# Datepicker
-Just another Datepicker built with React
+# kalendarz
+
+Another datepicker built with React

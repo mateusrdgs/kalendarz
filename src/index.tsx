@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Simple } from './components'
+import { Datepicker } from './components'
 
 const main = document.getElementById('main');
 
 ReactDOM.render(
-  <Simple />,
+  <Datepicker />,
   main
 )

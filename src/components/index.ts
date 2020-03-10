@@ -1,5 +1,5 @@
-import Simple from './Simple'
+import Datepicker from './Datepicker'
 
 export {
-  Simple
-}
+  Datepicker
+};
