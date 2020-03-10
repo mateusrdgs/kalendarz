@@ -1,9 +1,9 @@
 {
-  "name": "datepicker",
+  "name": "kalendarz",
   "version": "0.1.0",
-  "description": "React Datepicker",
+  "description": "Another datepicker built with React",
   "main": "lib/index.js",
-  "repository": "git@github.com:mateusrdgs/datepicker.git",
+  "repository": "git@github.com:mateusrdgs/kalendarz.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com>",
   "license": "MIT",
   "scripts": {
