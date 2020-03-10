@@ -1,9 +1,32 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "react",
     "target": "es5",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "lib",
+    "typeRoots": ["node_modules/@types"],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ]
+    }
   },
   "include": ["src"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "lib"]
 }

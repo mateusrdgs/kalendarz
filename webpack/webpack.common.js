@@ -10,6 +10,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
+    modules: [
+      path.resolve(cwd, 'src'),
+      'node_modules'
+    ]
   },
   module: {
     rules: [
