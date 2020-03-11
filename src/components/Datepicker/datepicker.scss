@@ -19,9 +19,15 @@ $gray: #AFAFAF;
   box-shadow: 0 0 10px #DDD;
   display: flex;
   flex-direction: column;
-  max-width: 344px;
+  max-width: 288px;
   padding: 16px;
   width: 100%;
+
+  @media screen and (min-width: 425px) {
+    
+    max-width: 320px;
+
+  }
 
   &,
   & * {
@@ -42,10 +48,11 @@ $gray: #AFAFAF;
         &:not(.opaque .--selected) {
 
           button {
-  
+
             color: $gray;
-  
+
           }
+
         }
 
       }
@@ -68,14 +75,21 @@ $gray: #AFAFAF;
 
       .header__handler {
 
-        @include squarify(40px);
-
-        background-color: #FFF;
+        
+        background-color: transparent;
         border: 0;
         border-radius: 50%;
         font-size: 14px;
         transition: background-color .1s ease-in-out, color .1s ease-in-out;
         will-change: background-color, color;
+        
+        @include squarify(30px);
+
+        @media screen and (min-width: 425px) {
+
+          @include squarify(40px);
+
+        }
 
         &:hover {
           
@@ -101,6 +115,8 @@ $gray: #AFAFAF;
       display: flex;
       justify-content: center;
       margin: 0 8px;
+      height: 40px;
+      text-align: center;
       width: 100%;
 
     }
@@ -108,93 +124,154 @@ $gray: #AFAFAF;
   }
 
   .table {
+    
+    &,
+    &__head,
+    &__body {
 
-    &__head__cell {
+      display: block;
 
-      @include squarify(40px);
+      &__cell {
 
-      &:hover {
-
-        cursor: default;
+        padding: 0;
 
       }
 
     }
 
-    &__body__cell {
+    &__head {
 
-      button {
+      &_row,
+      &__cell {
 
-        @include squarify(40px);
-        
-        background-color: transparent;
-        border: 0;
-        border-radius: 50%;
-        font-size: 14px;
-        position: relative;
-        transition: color .2s ease-out;
-        will-change: color;
-        z-index: 0;
+        display: flex;
+
+      }
+
+      &_row {
+
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+      }
+
+      &__cell {
+
+        align-items: center;
+        justify-content: center;
+
+        @include squarify(30px);
+
+        @media screen and (min-width: 425px) {
+
+          @include squarify(40px);
+
+        }
 
         &:hover {
 
-          cursor: pointer;
-
-        }
-
-        &::before {
-
-          background-color: $green;
-          border-radius: 50%;
-          content: '';
-          height: 100%;
-          left: 0;
-          position: absolute;
-          opacity: 0;
-          top: 0;
-          transform: scale(0);
-          transition: opacity .3s ease-in, transform .2s ease-in-out;
-          width: 100%;
-          will-change: opacity, transform;
-          z-index: -1;
+          cursor: default;
 
         }
 
       }
-  
-      &.--opaque {
 
-        pointer-events: none;
-  
+    }
+
+    &__body {
+
+      &_row {
+
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+      }
+
+      &__cell {
+
         button {
 
-          color: #FFF;
+          background-color: transparent;
+          border: 0;
+          border-radius: 50%;
+          font-size: 14px;
+          padding: 0;
+          position: relative;
+          transition: color .2s ease-out;
+          will-change: color;
+          z-index: 0;
 
-        }
-  
-      }
+          @include squarify(30px);
 
-      &.--selected {
+          @media screen and (min-width: 425px) {
 
-        &:not(.--opaque) {
-
-          button {
-
-            color: #FFF;
-
-            &::before {
-
-              opacity: 1;
-              transform: scale(1);
-  
-            }
+            @include squarify(40px);
 
           }
-
+  
+          &:hover {
+  
+            cursor: pointer;
+  
+          }
+  
+          &::before {
+  
+            background-color: $green;
+            border-radius: 50%;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            transform: scale(0);
+            transition: opacity .3s ease-in, transform .2s ease-in-out;
+            width: 100%;
+            will-change: opacity, transform;
+            z-index: -1;
+  
+          }
+  
         }
-
-      }
     
+        &.--opaque {
+  
+          pointer-events: none;
+    
+          button {
+  
+            color: #FFF;
+  
+          }
+    
+        }
+  
+        &.--selected {
+  
+          &:not(.--opaque) {
+  
+            button {
+  
+              color: #FFF;
+  
+              &::before {
+  
+                opacity: 1;
+                transform: scale(1);
+    
+              }
+  
+            }
+  
+          }
+  
+        }
+      
+      }
+
     }
 
   }
