@@ -1,25 +1,20 @@
 {
-  "name": "@mateusrdgs/kalendarz",
-  "version": "0.0.0",
+  "name": "kalendarz",
+  "version": "0.1.0",
   "description": "Another datepicker built with React",
   "keywords": ["Datepicker", "React", "TypeScript"],
   "main": "lib/index.js",
   "repository": "git@github.com:mateusrdgs/kalendarz.git",
   "author": "Mateus Rodrigues <devrdgs@gmail.com>",
   "license": "MIT",
-  "directories": {},
   "scripts": {
     "clean": "rimraf lib",
-    "prestart": "yarn run clean",
-    "prebuild": "yarn run clean",
-    "test": "echo SOON",
+    "prestart": "npm run clean",
+    "prebuild": "npm run clean",
     "start": "webpack-dev-server --config ./webpack/webpack.dev.js --env.NODE_ENV=development",
     "build": "webpack --config ./webpack/webpack.prod.js --env.NODE_ENV=production"
   },
   "private": false,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.13.0",
