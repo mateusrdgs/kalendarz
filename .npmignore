@@ -1,2 +1,5 @@
-# Lib folder
-!lib
+# webpack folder
+webpack
+
+# src folder
+src
