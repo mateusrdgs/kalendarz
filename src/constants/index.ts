@@ -24,3 +24,8 @@ export const months: string[] = [
   "November",
   "December"
 ];
+
+export enum ArrowsKeyCode {
+  Left = 37,
+  Right = 39,
+}
