@@ -1,5 +1,11 @@
 # webpack folder
-webpack
+webpack/
 
 # src folder
-src
+src/
+
+# tsconfig file
+.tsconfig
+
+# yarn-error.log file
+yarn-error.log
