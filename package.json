@@ -1,6 +1,6 @@
 {
   "name": "kalendarz",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Another datepicker built with React",
   "keywords": [
     "Datepicker",
@@ -21,6 +21,7 @@
   "files": [
     "lib/**/*"
   ],
+  "types": "lib/components/index.d.ts",
   "private": false,
   "dependencies": {
     "classnames": "^2.2.6",
