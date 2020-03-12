@@ -1,6 +1,6 @@
 {
   "name": "kalendarz",
-  "version": "0.1.1-b",
+  "version": "0.1.2",
   "description": "Another datepicker built with React",
   "keywords": [
     "Datepicker",
