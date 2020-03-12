@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 
-import { Day } from "../../interfaces";
-import { checkIsWeekend } from "../../utils";
+import { Day } from "../interfaces";
+import { checkIsWeekend } from "../utils";
 
 interface WeeksProps {
   onDatePick: Function;

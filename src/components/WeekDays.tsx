@@ -1,5 +1,5 @@
 import React from "react";
-import { WeekDay } from "../../interfaces";
+import { WeekDay } from "../interfaces";
 
 interface WeekDaysProps {
   weekDays: WeekDay[];

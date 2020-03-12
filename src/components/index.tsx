@@ -13,19 +13,25 @@ import {
   getCurrentMonthAsString,
   getCurrentYearAsString,
   checkCanSelectDate
-} from "../../utils";
-import { useDate } from "../../hooks";
-import { weekDays } from "../../constants";
+} from "../utils";
+import { useDate } from "../hooks";
+import { weekDays } from "../constants";
 
-import "./datepicker.scss";
+import "./kalendarz.scss";
 
-interface DatepickerProps {
+interface KalendarzProps {
   disableWeekendSelection?: boolean;
   defaultValue?: string;
   onDatePick?: Function,
 }
 
-const Datepicker = ({ disableWeekendSelection, defaultValue = '', onDatePick }: DatepickerProps) => {
+const Kalendarz = ({ disableWeekendSelection, onDatePick }: KalendarzProps) => {
+
+  const wrapperClassnames = classNames("kalendarz", {
+    "--disable-weekend": disableWeekendSelection
+  });
+
+
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState('');
   const { firstDateOfMonth, lastDateOfMonth } = useDate(currentDate);
@@ -54,12 +60,8 @@ const Datepicker = ({ disableWeekendSelection, defaultValue = '', onDatePick }: 
   const currentMonthAsString = getCurrentMonthAsString(currentDate);
   const currentYearAsString = getCurrentYearAsString(currentDate);
 
-  const datepickerClassnames = classNames("datepicker", {
-    "--disable-weekend": disableWeekendSelection
-  });
-
   return (
-    <div className={datepickerClassnames}>
+    <div className={wrapperClassnames}>
       <Header
         onPreviousYearClick={() => {
           const year = currentDate.getFullYear() - 1;
@@ -117,4 +119,4 @@ const Datepicker = ({ disableWeekendSelection, defaultValue = '', onDatePick }: 
   );
 };
 
-export default Datepicker;
+export default Kalendarz;

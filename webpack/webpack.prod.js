@@ -7,9 +7,9 @@ const cwd = process.cwd();
 
 module.exports = merge(commonConfig, {
   mode: 'production',
-  entry: path.resolve(cwd, 'src', 'components', 'index.ts'),
+  entry: path.resolve(cwd, 'src', 'components', 'index.tsx'),
   output: {
-    library: 'dzll',
+    library: 'kalendarz',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
