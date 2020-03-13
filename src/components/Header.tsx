@@ -22,19 +22,19 @@ const Header = ({
   return (
     <div className="header">
       <div className="header__handlers">
-        <button className="header__handler" onClick={onPreviousYearClick}>
+        <button className="header__handler" id="prev__year" onClick={onPreviousYearClick}>
           {"<<"}
         </button>
-        <button className="header__handler" onClick={onPreviousMonthClick}>
+        <button className="header__handler" id="prev__month" onClick={onPreviousMonthClick}>
           {"<"}
         </button>
       </div>
       <p className="header__title">{currentMonthAndYear}</p>
       <div className="header__handlers">
-        <button className="header__handler" onClick={onNextMonthClick}>
+        <button className="header__handler" id="next__month" onClick={onNextMonthClick}>
           {">"}
         </button>
-        <button className="header__handler" onClick={onNextYearClick}>
+        <button className="header__handler" id="next__year" onClick={onNextYearClick}>
           {">>"}
         </button>
       </div>
