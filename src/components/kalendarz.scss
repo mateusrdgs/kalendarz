@@ -45,7 +45,7 @@ $gray: #AFAFAF;
 
         pointer-events: none;
 
-        &:not(.opaque .--selected) {
+        &:not(.--hidden .--selected) {
 
           button {
 
@@ -184,12 +184,20 @@ $gray: #AFAFAF;
       &_row {
 
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 100%;
 
       }
 
       &__cell {
+
+        @include squarify(37px);
+
+        @media screen and (min-width: 425px) {
+
+          @include squarify(40px);
+
+        }
 
         button {
 
@@ -200,25 +208,19 @@ $gray: #AFAFAF;
           padding: 0;
           position: relative;
           transition: color .2s ease-out;
+          width: 100%;
+          height: 100%;
           will-change: color;
           z-index: 0;
-
-          @include squarify(30px);
-
-          @media screen and (min-width: 425px) {
-
-            @include squarify(40px);
-
-          }
   
           &:hover {
   
             cursor: pointer;
   
           }
-  
+
           &::before {
-  
+
             background-color: $green;
             border-radius: 50%;
             content: '';
@@ -237,7 +239,7 @@ $gray: #AFAFAF;
   
         }
     
-        &.--opaque {
+        &.--hidden {
   
           pointer-events: none;
     
@@ -251,7 +253,7 @@ $gray: #AFAFAF;
   
         &.--selected {
   
-          &:not(.--opaque) {
+          &:not(.--hidden) {
   
             button {
   

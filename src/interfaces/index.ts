@@ -6,5 +6,5 @@ export interface WeekDay {
 export interface Day {
   day: number;
   date: string;
-  opaque?: boolean;
+  hidden?: boolean;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
+import If from './If'
 import { Day } from "../interfaces";
 import { checkIsWeekend } from "../utils";
 
@@ -17,18 +18,22 @@ const Weeks = ({ weeks, selectedDate, onDatePick }: WeeksProps) => {
         return (
           <tr className="table__row table__body_row" key={`week-${weekIdx}`}>
             {week.map((day: Day, dayIdx: number) => {
+
               const isWeekend = checkIsWeekend(day.date);
               const cellClassname = classNames(
                 "table__cell table__body__cell",
                 {
-                  "--opaque": day.opaque,
+                  "--hidden": day.hidden,
                   "--selected": day.date === selectedDate,
                   "--weekend": isWeekend
                 }
               );
               return (
                 <td key={`day-${weekIdx}-${dayIdx}`} className={cellClassname}>
-                  <button onClick={onDatePick(day.date)}>{day.day}</button>
+                  <If
+                    condition={!day.hidden}
+                    renderIf={<button onClick={onDatePick(day.date)}>{day.day}</button>}
+                  />
                 </td>
               );
             })}

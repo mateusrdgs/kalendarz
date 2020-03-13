@@ -35,8 +35,8 @@ export const generatePreviousMonthDays = (
 
   const previousMonthDays = Array.from(
     { length: firstDayOfMonthInWeek },
-    (_, idx) => {
-      const opaque = true;
+    (_, idx): Day => {
+      const hidden = true;
       const dayOfPreviousMonth = dateOnlyOfPreviousMonth - idx;
       const date = new Date(
         yearOnlyOfPreviousMonth,
@@ -46,7 +46,7 @@ export const generatePreviousMonthDays = (
       return {
         day: dayOfPreviousMonth,
         date,
-        opaque
+        hidden
       };
     }
   ).reverse();
@@ -66,8 +66,8 @@ export const generateNextMonthDays = (
 
   const nextMonthDays = Array.from(
     { length: 6 - lastDayOfMonthInWeek },
-    (_, idx) => {
-      const opaque = true;
+    (_, idx): Day => {
+      const hidden = true;
       const dayOfNextMonth = idx + 1;
       const date = new Date(
         yearOnlyOfNextMonth,
@@ -77,7 +77,7 @@ export const generateNextMonthDays = (
       return {
         day: dayOfNextMonth,
         date,
-        opaque
+        hidden
       };
     }
   );
@@ -95,8 +95,8 @@ export const generateCurrentMonthDays = (
   const yearOnlyOfCurrentMonth = firstDateOfCurrentMonth.getFullYear();
   const monthOnlyOfCurrentMonth = firstDateOfCurrentMonth.getMonth();
 
-  const currentMonthDays = Array.from({ length: daysInMonth }, (_, idx) => {
-    const opaque = false;
+  const currentMonthDays = Array.from({ length: daysInMonth }, (_, idx): Day => {
+    const hidden = false;
     const dayOfCurrentMonth = idx + 1;
     const date = new Date(
       yearOnlyOfCurrentMonth,
@@ -107,7 +107,7 @@ export const generateCurrentMonthDays = (
     return {
       day: dayOfCurrentMonth,
       date,
-      opaque
+      hidden
     };
   });
   return currentMonthDays;
