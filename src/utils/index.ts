@@ -138,9 +138,3 @@ export const checkCanSelectDate = (
 
   return canSelectDate;
 };
-
-export const noop = (): void => {};
-
-export const focusOnElement = (element: HTMLButtonElement): void => {
-  element.focus()
-}
