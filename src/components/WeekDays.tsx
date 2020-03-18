@@ -1,8 +1,8 @@
-import React from "react";
-import { WeekDay } from "../interfaces";
+import React from 'react'
+import { WeekDay } from '../interfaces'
 
 interface WeekDaysProps {
-  weekDays: WeekDay[];
+  weekDays: WeekDay[]
 }
 
 const WeekDays = ({ weekDays }: WeekDaysProps) => {
@@ -18,11 +18,11 @@ const WeekDays = ({ weekDays }: WeekDaysProps) => {
             >
               <abbr>{weekDay.label}</abbr>
             </th>
-          );
+          )
         })}
       </tr>
     </thead>
-  );
-};
+  )
+}
 
-export default WeekDays;
+export default WeekDays

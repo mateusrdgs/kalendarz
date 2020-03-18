@@ -1,13 +1,13 @@
-import React from "react";
-import classNames from "classnames";
+import React from 'react'
+import classNames from 'classnames'
 
-import { Day } from "../interfaces";
-import { checkIsWeekend } from "../utils";
+import { Day } from '../interfaces'
+import { checkIsWeekend } from '../utils'
 
 interface WeeksProps {
-  onDatePick: Function;
-  selectedDate: string;
-  weeks: Day[][];
+  onDatePick: Function
+  selectedDate: string
+  weeks: Day[][]
 }
 
 const Weeks = ({ weeks, selectedDate, onDatePick }: WeeksProps) => {
@@ -17,26 +17,26 @@ const Weeks = ({ weeks, selectedDate, onDatePick }: WeeksProps) => {
         return (
           <tr className="table__row table__body_row" key={`week-${weekIdx}`}>
             {week.map((day: Day, dayIdx: number) => {
-              const isWeekend = checkIsWeekend(day.date);
+              const isWeekend = checkIsWeekend(day.date)
               const cellClassname = classNames(
-                "table__cell table__body__cell",
+                'table__cell table__body__cell',
                 {
-                  "--opaque": day.opaque,
-                  "--selected": day.date === selectedDate,
-                  "--weekend": isWeekend
+                  '--opaque': day.opaque,
+                  '--selected': day.date === selectedDate,
+                  '--weekend': isWeekend
                 }
-              );
+              )
               return (
                 <td key={`day-${weekIdx}-${dayIdx}`} className={cellClassname}>
                   <button onClick={onDatePick(day.date)}>{day.day}</button>
                 </td>
-              );
+              )
             })}
           </tr>
-        );
+        )
       })}
     </tbody>
-  );
-};
+  )
+}
 
-export default Weeks;
+export default Weeks

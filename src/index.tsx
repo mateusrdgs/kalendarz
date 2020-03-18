@@ -5,9 +5,6 @@ import Kalendarz from './components'
 
 import './index.scss'
 
-const main = document.getElementById('main');
+const main = document.getElementById('main')
 
-ReactDOM.render(
-  <Kalendarz />,
-  main
-)
+ReactDOM.render(<Kalendarz />, main)
